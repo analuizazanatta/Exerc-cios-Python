@@ -106,17 +106,28 @@ print('ACABOU!')"""
 # Número primo é aquele divisível por ele mesmo e por 1;
 
 """num = int(input('Digite um número: '))
-cont = 0
-for c in range(1, num + 1):
-    print(c, end=' ')
-    cont += 1
+ 
+cont = num
 
-if num % c == 0:
-    print(f'O número {num} é um número primo, ele é divisível {cont} vezes por 1 e por ele mesmo.')
+while cont > 0:
+    # 1. Verifica se o cont é igual ao num (se é 7/7)
+    # 2. Verifica se o cont é igual a 1 (se é 7/1)
+    # 3. Verifica se o resto da divisão do num pelo cont é igual a 0 (divisão exata)
 
-else:
-    print(f'O número digitado não é um número primo, ele é divisível por ')"""
+    if (cont != num) and (cont != 1) and (num % cont == 0):
+        print(f'NÃO É PRIMO -> divisível por {cont}')
+        exit()
+
+    print(f'{num} resto da divisão por {cont} é igual a {num % cont}')
+    
+    cont -= 1
+    
+print('É PRIMO')"""
+
+
+
+
 
 # ____________________________
 
-# Exercício 
+# Exercício 53: 
