@@ -125,3 +125,28 @@ while cont > 0:
 print('É PRIMO')"""
 
 
+# __________________
+
+# Exercício 54: Crie um programa que leia o ano de nascimento de sete pessoas. 
+# No final, mostre quantas pessoas ainda não atingiram a maioridade e quantas já são maiores.
+
+from datetime import datetime 
+
+lista = []
+
+for _ in range(7):
+    data_nascimento = input('Digite a data do seu nascimento [dd/mm/aaaa]: ')
+    data = datetime.strptime(data_nascimento, '%d/%m/%Y')
+    lista.append(data)
+
+lista = sorted(lista)
+
+
+lista_nascimento = []
+
+for data in lista:
+    nascimento = data.strftime('%d/%m/%Y')
+    lista_nascimento.append(nascimento)
+
+print(f'A menor data é a {lista_nascimento[0]}')
+print(f'A maior data é a {lista_nascimento[-1]}')
