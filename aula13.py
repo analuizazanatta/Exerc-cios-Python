@@ -124,13 +124,21 @@ while cont > 0:
     
 print('É PRIMO')"""
 
+# ________________________________
+
+# Exercício 53: Crie um programa que leia uma frase qualquer e diga se ela é um palíndromo, desconsiderando os espaços.
+# Exemplos de palíndromos:
+# APOS A SOPA, A SACADA DA CASA, A TORRE DA DERROTA, O LOBO AMA O BOLO, ANOTARAM A DATA DA MARATONA.
+
+# Fez no curso
+
 
 # __________________
 
 # Exercício 54: Crie um programa que leia o ano de nascimento de sete pessoas. 
 # No final, mostre quantas pessoas ainda não atingiram a maioridade e quantas já são maiores.
 
-from datetime import datetime 
+"""from datetime import datetime 
 
 lista = []
 
@@ -149,4 +157,101 @@ for data in lista:
     lista_nascimento.append(nascimento)
 
 print(f'A menor data é a {lista_nascimento[0]}')
-print(f'A maior data é a {lista_nascimento[-1]}')
+print(f'A maior data é a {lista_nascimento[-1]}')"""
+
+# _____________________________
+
+# Exercício 55: Faça um programa que leia o peso de cinco pessoas. No final, mostre qual foi o maior e o menor peso lidos.
+
+
+"""lista = []
+
+for _ in range(5):
+    peso = float(input('Digite o primeiro peso: '))
+    lista.append(peso)
+
+lista = sorted(lista)
+
+print(f'O menor peso foi {lista[0]} e maior peso é {lista[-1]}. ')"""
+
+# ____________________________
+
+# Exercício 56: Desenvolva um programa que leia o nome, idade e sexo de 4 pessoas.
+# No final do programa, mostre: a média de idade do grupo, qual é o nome do homem mais velho e quantas mulheres têm menos de 20 anos.
+
+"""
+lista_homens = []
+quantidade_pessoas = 4
+soma_idades = 0
+cont_mulhermenor_20 = 0
+
+for dados in range(quantidade_pessoas):
+    print(f'{20 * "-"} {dados + 1}ª pessoa {20 * "-"}')
+    nome = str(input(f'Digite o nome da {dados + 1}ª pessoa: '))
+    idade = int(input('Digite a idade da pessoa: '))
+    sexo = str(input('Qual é o sexo? [F / M]: ')).upper()
+
+    if sexo == 'M':
+        homem = {'nome': nome, 'idade': idade, 'sexo': sexo}
+        lista_homens.append(homem)
+
+    if sexo == 'F' and idade < 20:
+        cont_mulhermenor_20 += 1
+
+    soma_idades += idade
+    
+print(f'A média das idades do grupo foi {soma_idades / quantidade_pessoas}. ')
+
+# homem(s) mais velho(s)
+if len(lista_homens) == 0:
+    print('Não existe nenhum homem. ')
+elif len(lista_homens) == 1:
+    print('Existe apenas 1 homem. ')
+else:
+    lista_homens_mais_velhos = []
+    for homem in lista_homens:
+        if len(lista_homens_mais_velhos) == 0:
+            lista_homens_mais_velhos.append(homem)
+        else:
+            mais_velho = lista_homens_mais_velhos[0]
+
+            if homem['idade'] == mais_velho['idade']:
+                lista_homens_mais_velhos.append(homem)
+            elif homem['idade'] > mais_velho['idade']:
+                lista_homens_mais_velhos = [homem]
+
+    if len(lista_homens_mais_velhos) == 1:
+        mais_velho = lista_homens_mais_velhos[0]
+        print(f'O homem mais velho é o {mais_velho["nome"]} com a idade {mais_velho["idade"]}. ')
+    
+    elif len(lista_homens) == len(lista_homens_mais_velhos):
+        print(f'Todos os {len(lista_homens)} homens tem a mesma idade. ')
+
+    else: 
+        homens_mais_velhos = ''
+        for i, mais_velho in enumerate(lista_homens_mais_velhos):
+            if i == 0: 
+                homens_mais_velhos = mais_velho['nome']
+            elif i == len(lista_homens_mais_velhos) - 1:
+                homens_mais_velhos += f' e {mais_velho["nome"]}'
+            else:
+                homens_mais_velhos += f', {mais_velho["nome"]}'
+
+        print(f'Os {len(lista_homens_mais_velhos)} homens mais velhos são {homens_mais_velhos}. ')
+
+#Verificação de quantidade de mulheres abaixo dos 20 anos dentro do print.
+
+# print(f"Existe {cont_mulhermenor_20} mulher menor de 20 anos" 
+#      if cont_mulhermenor_20 == 1 
+#      else f"Existem {cont_mulhermenor_20} mulheres menores de 20 anos" 
+#      if cont_mulhermenor_20 > 0 
+#      else 'Não existem mulheres menores de 20 anos.')
+ 
+if cont_mulhermenor_20 > 0:
+    if cont_mulhermenor_20 == 1:
+        print(f"Existe {cont_mulhermenor_20} mulher menor de 20 anos")
+    else:
+        print(f"Existem {cont_mulhermenor_20} mulheres menores de 20 anos")
+else:
+    print('Não existem mulheres menores de 20 anos.')
+"""
