@@ -193,4 +193,37 @@ print('ACABOU!')
 
 # _________________________
 
-# Exercício 
+# Exercício 63: Escreva um programa que leia um número N inteiro qualquer e mostre na tela os N primeiros
+# elementos de uma Sequência de Fibonacci. 
+# Exemplo: 0 – 1 – 1 – 2 – 3 – 5 – 8
+
+# Não fez
+
+
+# _________________________
+
+# Exercício 64: Crie um programa que leia vários números inteiros pelo teclado. 
+# O programa só vai parar quando o usuário digitar o valor 999, que é a condição de parada. 
+# No final, mostre quantos números foram digitados e qual foi a soma entre eles (desconsiderando o flag).
+"""
+num = cont = soma = 0
+
+while True:
+    num = int(input('Digite um número qualquer e "999" para acabar o programa: '))
+
+    if num == 999:
+        print('O programa não aceita mais números!!! ')
+        break
+
+    cont += 1
+    soma += num
+
+print(f'Você digitou {cont} números. A soma de todos eles fica {soma}')
+
+"""
+
+# ____________________________
+
+# Exercício 65: Crie um programa que leia vários números inteiros pelo teclado. 
+# No final da execução, mostre a média entre todos os valores e qual foi o maior e o menor valores lidos. 
+# O programa deve perguntar ao usuário se ele quer ou não continuar a digitar valores.
