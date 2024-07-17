@@ -196,10 +196,20 @@ print('ACABOU!')
 # Exercício 63: Escreva um programa que leia um número N inteiro qualquer e mostre na tela os N primeiros
 # elementos de uma Sequência de Fibonacci. 
 # Exemplo: 0 – 1 – 1 – 2 – 3 – 5 – 8
+"""
+num = int(input('Digite um número: '))
 
-# Não fez
+fibonacci = [0, 1]
 
+while True:
+    proximo_termo = fibonacci[-1] + fibonacci[-2]
+    if proximo_termo > num:
+        break
+    fibonacci.append(proximo_termo)
 
+print(f'A sequência de Fibonacci até {num} é:\n{" -> ".join([str(i) for i in fibonacci])}')
+
+"""
 # _________________________
 
 # Exercício 64: Crie um programa que leia vários números inteiros pelo teclado. 
@@ -227,3 +237,33 @@ print(f'Você digitou {cont} números. A soma de todos eles fica {soma}')
 # Exercício 65: Crie um programa que leia vários números inteiros pelo teclado. 
 # No final da execução, mostre a média entre todos os valores e qual foi o maior e o menor valores lidos. 
 # O programa deve perguntar ao usuário se ele quer ou não continuar a digitar valores.
+
+"""
+numeros = []
+
+while True:
+    quantidade_numeros = int(input('Deseja ler quantos números? '))
+
+    for c in range(quantidade_numeros):
+        num = int(input(f'Digite o {c + 1}° número: '))
+        numeros.append(num)
+
+    media = sum(numeros) / len(numeros)
+    print(f'A média dos valores é de {media}. ')
+
+    numeros = sorted(numeros)
+
+    print(f'O maior dos números foi {numeros[-1]} e o menor número foi {numeros[0]}')
+
+
+
+    pergunta = str(input('Deseja digitar mais números? ')).upper()
+
+    if pergunta != 'SIM':
+        print('Encerrando o programa...')
+        break
+ """   
+
+# _______________________
+
+# 
