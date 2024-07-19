@@ -161,7 +161,8 @@ print(f'A maior data é a {lista_nascimento[-1]}')"""
 
 # _____________________________
 
-# Exercício 55: Faça um programa que leia o peso de cinco pessoas. No final, mostre qual foi o maior e o menor peso lidos.
+# Exercício 55: Faça um programa que leia o peso de cinco pessoas.
+# No final, mostre qual foi o maior e o menor peso lidos.
 
 
 """lista = []
