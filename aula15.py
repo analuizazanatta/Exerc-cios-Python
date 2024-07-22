@@ -92,22 +92,57 @@ while True:
 # B) quantos homens foram cadastrados.
 # C) quantas mulheres tem menos de 20 anos.
 
-# Exercício 56 aula 13
-
-from datetime import datetime 
+# Exercício 56 aula 13 
+"""
+contpessoas_maiores_18 = 0
+cont_mulheresmenores_20 = 0
+cont_homens = 0
 
 while True:
-    idade = int(input('Digite a idade da pessoa: '))
-    sexo = str(input('Digite o sexo da pessoa [F / M]: ')).upper()
 
-    pergunta = str(input('Deseja continuar adicionando dados? [SIM / NÃO]: ')).upper()
+    idade = int(input('Digite a idade: '))
+    sexo = str(input('Informe o sexo [F / M]: ')).upper()
+
+    pergunta = str(input('Deseja continuar cadastrando? [SIM / NÃO]: ')).upper()
 
     if pergunta != 'SIM':
-        print('Encerrando o programa... ')
+        print('Encerrando o programa...')
         break
 
-    
-    
+    if idade > 18:
+       contpessoas_maiores_18 += 1
+
+    if sexo == 'F' and idade < 18:
+        cont_mulheresmenores_20 += 1
+
+    if sexo == 'M':
+        cont_homens += 1
+
+print(f'Total de pessoas maiores de 18 anos: {contpessoas_maiores_18}')
+print(f'Total de mulheres menores de 20 anos: {cont_mulheresmenores_20} ')
+print(f'Total de homens cadastrados: {cont_homens} ')
+"""
+
+# Exercício 70: Crie um programa que leia o nome e o preço de vários produtos.
+# O programa deverá perguntar se o usuário vai continuar ou não. No final, mostre:
+# A) qual é o total gasto na compra.
+# B) quantos produtos custam mais de R$1000.
+# C) qual é o nome do produto mais barato.
+
+ 
+while True:
+
+    nome_produto = str(input('Qual é o nome do produto? '))
+    valor = float(input('Qual é o valor do produto? R$ '))
+
+    pergunta = str(input('Deseja cadastrar mais produtos? [SIM / NÃO]: '))
+
+    if pergunta != 'SIM':
+        print('Encerrando a compra. ')
+
+
+
+
 
 
 
