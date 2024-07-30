@@ -91,8 +91,7 @@ while True:
 # A) quantas pessoas tem mais de 18 anos.
 # B) quantos homens foram cadastrados.
 # C) quantas mulheres tem menos de 20 anos.
-
-# Exercício 56 aula 13 
+ 
 """
 contpessoas_maiores_18 = 0
 cont_mulheresmenores_20 = 0
@@ -122,6 +121,7 @@ print(f'Total de pessoas maiores de 18 anos: {contpessoas_maiores_18}')
 print(f'Total de mulheres menores de 20 anos: {cont_mulheresmenores_20} ')
 print(f'Total de homens cadastrados: {cont_homens} ')
 """
+# _____________________________
 
 # Exercício 70: Crie um programa que leia o nome e o preço de vários produtos.
 # O programa deverá perguntar se o usuário vai continuar ou não. No final, mostre:
@@ -129,20 +129,76 @@ print(f'Total de homens cadastrados: {cont_homens} ')
 # B) quantos produtos custam mais de R$1000.
 # C) qual é o nome do produto mais barato.
 
- 
+"""
+valor_total = 0
+produto_maisde_mil = 0
+produto_barato_nome = ''
+produto_barato_valor = 0
+
 while True:
 
-    nome_produto = str(input('Qual é o nome do produto? '))
-    valor = float(input('Qual é o valor do produto? R$ '))
+    nome = str(input('Qual é o nome do produto? '))
+    valor = float(input('Agora digite o valor: R$ '))
 
-    pergunta = str(input('Deseja cadastrar mais produtos? [SIM / NÃO]: '))
+
+    # a)
+
+    valor_total += valor
+
+    # b)
+
+    if valor > 1000:
+        produto_maisde_mil += valor
+
+    # c)
+
+    if produto_barato_nome == "" or valor < produto_barato_valor:
+        produto_barato_nome = nome
+        produto_barato_valor = valor
+
+    pergunta = str(input('Deseja cadastrar mais produtos? [SIM / NÃO]: ')).upper()
 
     if pergunta != 'SIM':
         print('Encerrando a compra. ')
+        break
 
+    
+print(f'Total gasto na compra R${valor_total:.2f}')
+print(f'{produto_maisde_mil} produtos custam mais de R$1.000,00')
+print(f'O produto mais barato é o {produto_barato_nome}, custando R${produto_barato_valor:.2f}')
+"""
 
+# ____________________________
 
+# Exercício 71: Crie um programa que simule o funcionamento de um caixa eletrônico.
+# No início, pergunte ao usuário qual será o valor a ser sacado (número inteiro) e o programa vai informar quantas
+# cédulas de cada valor serão entregues.
+# OBS: Considere que o caixa possui cédulas de R$50, R$20, R$10 e R$1.
 
+"""
+valor_saque = int(input('Qual é o valor do saque? R$ '))
 
+cedula50 = 0
+cedula20 = 0
+cedula10 = 0
+cedula1 = 0
 
+while valor_saque > 0:
+    cedula50 = valor_saque // 50
+    valor_saque = valor_saque % 50
+
+    cedula20 = valor_saque // 20
+    valor_saque = valor_saque % 20
+
+    cedula10 = valor_saque // 10
+    valor_saque = valor_saque % 10
+
+    cedula1 = valor_saque // 1
+    valor_saque = valor_saque % 1    
+
+print(f'Cédulas de R$50: {cedula50}')
+print(f'Cédulas de R$20: {cedula20}')
+print(f'Cédulas de R$20: {cedula10}')
+print(f'Cédulas de R$2: {cedula1}')
+"""
 
