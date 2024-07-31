@@ -84,3 +84,34 @@ print(f'O número 3 apareceu na {valores.index(3) + 1}ª posição. ')
 # c)
 print(f'Os números pares da lista são: {", ".join([str(i) for i in valores if i % 2 == 0])}')  
 """
+# __________________
+
+# Exercício 76: Crie um programa que tenha uma tupla única com nomes de produtos e seus respectivos preços,
+# na sequência. No final, mostre uma listagem de preços, organizando os dados em forma tabular.
+
+"""
+tupla = ('maça', 3.5, 'banana', 4.80, 'pera', 3.00, 'abacate', 2.5, 'uva', 3.5, 'manga', 2.30)
+
+print(f'{'*' * 3}OFERTAS HORTÍFRUTE{'*' * 4}')
+for posicao in range(0, len(tupla)):
+    if posicao % 2 == 0:
+        print(f'{tupla[posicao]:.<20}', end="")
+    else:
+        print(f'R${tupla[posicao]:>3}')
+"""
+
+# ________________________
+
+# Exercício 77: Crie um programa que tenha uma tupla com várias palavras (não usar acentos).
+# Depois disso, você deve mostrar, para cada palavra, quais são as suas vogais.
+
+palavras = ('LAPIS', 'BORRACHA', 'ARVORE', 'CABELO', 'COMPUTADOR', 'ANEL', 'ESTRADA', 'BICICLETA', 'CHOCOLATE', 'NDTV')
+
+print('Contando Vogais...')
+
+for p in palavras:
+    print(f'\nNa palavra {p} temos as vogais ', end="")
+    for vogal in p:
+        if vogal.upper() in 'AÁÃÂEÉIÍOÓÕÔUÚ':
+            print(f'{vogal}', end="")
+   
