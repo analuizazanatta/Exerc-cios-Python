@@ -105,6 +105,7 @@ for posicao in range(0, len(tupla)):
 # Exercício 77: Crie um programa que tenha uma tupla com várias palavras (não usar acentos).
 # Depois disso, você deve mostrar, para cada palavra, quais são as suas vogais.
 
+"""
 palavras = ('LAPIS', 'BORRACHA', 'ARVORE', 'CABELO', 'COMPUTADOR', 'ANEL', 'ESTRADA', 'BICICLETA', 'CHOCOLATE', 'NDTV')
 
 print('Contando Vogais...')
@@ -114,4 +115,4 @@ for p in palavras:
     for vogal in p:
         if vogal.upper() in 'AÁÃÂEÉIÍOÓÕÔUÚ':
             print(f'{vogal}', end="")
-   
+"""
