@@ -154,3 +154,60 @@ print(f'O número 5 não foi encontrado na sua lista! ')
 # Exercício 82: Crie um programa que vai ler vários números e colocar em uma lista. Depois disso, crie duas listas
 # extras que vão conter apenas os valores pares e os valores ímpares digitados, respectivamente. Ao final, mostre o
 # conteúdo das três listas geradas.
+
+"""
+lista = []
+lista_par = []
+lista_impar = []
+
+while True:
+    num = int(input('Digite um número: '))
+    lista.append(num)
+
+    if num % 2 == 0:
+        lista_par.append(num)
+
+    else:
+        lista_impar.append(num)
+
+    pergunta = str(input('Deseja continuar adicionando números? ')).upper()
+
+    if pergunta != 'SIM':
+        break
+
+print('-=' * 40)
+print('LISTA CRIADA!')
+print(F'Lista de números: {lista}')
+print(F'Lista com os números pares: {lista_par}')
+print(F'Lista com os números ímpares: {lista_impar}')
+"""
+
+# ______________________________
+
+# Exercício 83: Crie um programa onde o usuário digite uma expressão qualquer que use parênteses.
+# Seu aplicativo deverá analisar se a expressão passada está com os parênteses abertos e fechados na ordem correta.
+"""
+lista_exp = []
+
+expressao = input('Digite a sua expressão: ')
+
+for parentese in expressao:
+    if parentese == '(':
+        lista_exp.append('(')
+
+    elif parentese == ')':
+        if len(lista_exp) > 0:
+           lista_exp.pop()
+
+        else:
+            lista_exp.append(')')
+            break
+
+if len(lista_exp) == 0:
+    print('Sua espressão está correta! ')
+
+else:
+    print('Sua expressão está incorreta! ')
+"""
+
+# _____________________________
