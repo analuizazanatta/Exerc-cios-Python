@@ -14,8 +14,8 @@ while True:
     else:
         print('Opção inválida! Tente novamente')
 
-    # Como aqui não tem mais nada, vai iniciar o próximo loop
-"""
+    # Como aqui não tem mais nada, vai iniciar o próximo loop ...
+"""  
 
 # _________________________
 
