@@ -51,8 +51,8 @@ print(dados)"""
 # Exercício 91: Crie um programa onde 4 jogadores joguem um dado e tenham resultados aleatórios. 
 # Guarde esses resultados em um dicionário em Python. No final, coloque esse dicionário em ordem, sabendo que o vencedor tirou o maior
 # número no dado.
-"""
-from random import randint
+
+"""from random import randint
 from operator import itemgetter
 
 numero_dados = {
@@ -72,9 +72,36 @@ ranking = sorted(numero_dados.items(), key=itemgetter(1), reverse=True)
 #print(ranking)
 
 for k, v in ranking:
-    print(f'O {k} teve o maior valor no dado: {v}')
-"""
+    print(f'O {k} teve o maior valor no dado: {v}')"""
+
 
 # Exercício 92: Crie um programa que leia nome, ano de nascimento e carteira de trabalho e cadastre-o (com idade) em um dicionário. 
 # Se por acaso a CTPS for diferente de ZERO, o dicionário receberá também o ano de contratação e o salário.
-# Calcule e acrescente, além da idade, com quantos anos a pessoa vai se aposentar.
+# Calcule e acrescente, além da idade, com quantos anos a pessoa vai se aposentar
+
+from datetime import datetime
+
+nome = input("Digite seu nome: ")
+
+num_carteira_de_trabalho = input("Digite o número da sua carteira de trabalho: ")
+
+data_nascimento = input("Ano de nascimento [dd/mm/aaaa]: ")
+
+data_nascimento = datetime.strptime(data_nascimento, "%d/%m/%Y")
+
+data_atual = datetime.today()
+
+idade = int((data_atual - data_nascimento).days / 365)
+
+
+print(idade)
+
+cadastro_carteira_de_trabalho = {
+    "nome" : nome,
+    "idade": idade,
+    "CTPS" : num_carteira_de_trabalho,
+}
+
+if cadastro_carteira_de_trabalho["CTPS"] > 0:
+    cadastro_carteira_de_trabalh
+
