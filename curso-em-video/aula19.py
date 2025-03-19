@@ -79,7 +79,7 @@ for k, v in ranking:
 # Se por acaso a CTPS for diferente de ZERO, o dicionário receberá também o ano de contratação e o salário.
 # Calcule e acrescente, além da idade, com quantos anos a pessoa vai se aposentar
 
-from datetime import datetime
+"""from datetime import datetime
 
 nome = input("Digite seu nome: ")
 
@@ -105,3 +105,5 @@ cadastro_carteira_de_trabalho = {
 if cadastro_carteira_de_trabalho["CTPS"] > 0:
     cadastro_carteira_de_trabalh
 
+# INCOMPLETO!!!
+"""
