@@ -1,24 +1,14 @@
-# Criar um programa que solicite os dados: nome, telefone, e-mail, município, estado e questione se a escola está ativa ou inativa.
-# Essa escola deve ser salva dentro de um dicionário "chave:valor", e depois ser adicionada em uma lista geral que contém todas as escolas.
-# Deve ser possível: 
-# 1. Adicionar uma nova escola.
-# 2. Deve ser possível listar todas as escolas
-# 3. Ativar/Inativar uma escola já adicionada.
-# 4. Deve ser possível listar as escolas filtrando por situação ativa ou inativa.
+# 1. Criar um programa que solicite os dados: Nome, telefone, e-mail, município, estado e questione se a escola está ativa ou inativa. Essa escola deve ser salva dentro de um dicionário "chave:valor", e depois ser adicionada em uma lista geral que contém todas as escolas.
+# 2. Deve ser possível adicionar uma nova escola.
+# 3. Deve ser possível listar todas as escolas
+# 4. Deve ser possível ativar/Inativar uma escola já adicionada.
+# 5. Deve ser possível listar as escolas filtrando por situação ativa ou inativa.
 
-
-# ______________________________________
-
-
-
-
-# 1. Adicionar uma nova escola.
-# 2. Deve ser possível listar todas as escolas
-# 3. Ativar/Inativar uma escola já adicionada.
-# 4. Deve ser possível listar as escolas filtrando por situação ativa ou inativa.
 
 escolas_gerais = []
 
+
+# Função de cadastrar escolas:
 
 def cadastrar_escola():
 
@@ -47,7 +37,7 @@ def cadastrar_escola():
 
         cadastros_escolas["estado"] = input("Estado de município: ")
 
-        cadastros_escolas["status"] = input("Ativa ou inativa? ")
+        cadastros_escolas["status"] = input("Ativa ou inativa? ").upper()
 
         parar_cadastro = input("Deseja parar de cadastrar? [Sim/Não]: ").strip().upper()
 
@@ -56,14 +46,90 @@ def cadastrar_escola():
         if parar_cadastro == "SIM":
             break
 
-
+# Função para listar escolas:
 
 def listar_escolas():
     for indice, escola in enumerate(escolas_gerais):
         print(indice, escola)
 
-
-
+# Função para exibir as escolas e escolher qual será alterada a situação:
 
 def trocar_status():
+
+    # Listar escolas
+
     listar_escolas()
+
+    # Escolher escola
+
+    indice = input("Qual escola você deseja alterar? ")
+
+    indice_inteiro = int(indice)
+
+    escola = escolas_gerais[indice_inteiro]
+
+    # Alterar situação
+
+    if escola["status"] == "ATIVA":
+
+        escola["status"] = "INATIVA"
+
+    elif escola["status"] == "INATIVA":
+
+        escola["status"] = "ATIVA"
+
+    else:
+        print("Expressão inválida! ")
+
+    escolas_gerais[indice_inteiro] = escola 
+
+    print("Status alterado! Digite 2 para visualizar.")
+
+# Função para filtrar as escolas pela status:
+
+def filtrar_status():
+
+    opção_status = input("Qual status você quer filtrar? Ativa ou Inativa: ").upper()
+    
+    for dicionario in escolas_gerais:
+        if dicionario["status"] == opção_status:
+            print(dicionario)
+ 
+# Programa: 
+
+while True:
+
+    print()
+    print('Opções de ações: \n'
+          '[1] Cadastrar escolas.\n'
+          '[2] listar escolas.\n'
+          '[3] Trocas status do cadastro.\n' 
+          '[4] Filtrar escolas pelo status.\n'
+          '[5] Sair.')
+
+    print()
+
+    acao_escolhida = input('Qual ação você deseja fazer?  ')
+
+    print()
+
+    if acao_escolhida == "1":
+        cadastrar_escola()
+
+    elif acao_escolhida == "2":
+        listar_escolas()
+
+    elif acao_escolhida == "3":
+        trocar_status()
+
+    elif acao_escolhida == "4":
+        filtrar_status()
+
+    elif acao_escolhida == "5":
+        print("Saindo do programa..")
+        break
+
+    else:
+        print("Alternativa inválida, tente novamente.")
+
+    print()
